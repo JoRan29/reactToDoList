@@ -2,13 +2,17 @@ import React from "react";
 import "./App.css";
 import ToDoItem from "./ToDoItem";
 import Joke from "./Joke";
+import jokesData from "./jokesData";
 
 function App() {
+  const jokeComponents = jokesData.map((j) => {
+    return <Joke key={j.id} question={j.question} punchline={j.punchline} />;
+  });
   return (
     <div className="todoList">
       <ToDoItem />
       <ToDoItem />
-      <Joke question="Is this a joke?" punchline="Yes!" />
+      {jokeComponents}
       <ToDoItem />
       <ToDoItem />
     </div>
