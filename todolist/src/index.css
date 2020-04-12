@@ -32,3 +32,8 @@ code {
   width: 70%;
   border-bottom: 1px solid gray;
 }
+
+.products {
+  background-color: rgb(136, 91, 114);
+  padding: 40px;
+}
