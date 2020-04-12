@@ -5,6 +5,7 @@ import Joke from "./Joke";
 import jokesData from "./jokesData";
 import Product from "./Product";
 import productsData from "./productsData";
+import todoData from "./todoData";
 
 function App() {
   const jokeComponents = jokesData.map((j) => {
@@ -13,14 +14,14 @@ function App() {
   const productsComponents = productsData.map((p) => {
     return <Product key={p.id} type={p.type} price={p.price} />;
   });
+  const todoComponent = todoData.map((t) => {
+    return <ToDoItem key={t.id} text={t.text} completed={t.completed} />;
+  });
   return (
     <div className="todoList">
-      <ToDoItem />
-      <ToDoItem />
+      {todoComponent}
       {jokeComponents}
       {productsComponents}
-      <ToDoItem />
-      <ToDoItem />
     </div>
   );
 }
