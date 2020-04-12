@@ -27,6 +27,12 @@ import todoData from "./todoData";
 // }
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: todoData,
+    };
+  }
   render() {
     const jokeComponents = jokesData.map((j) => {
       return <Joke key={j.id} question={j.question} punchline={j.punchline} />;
@@ -34,7 +40,7 @@ class App extends React.Component {
     const productsComponents = productsData.map((p) => {
       return <Product key={p.id} type={p.type} price={p.price} />;
     });
-    const todoComponent = todoData.map((t) => {
+    const todoComponent = this.state.todos.map((t) => {
       return <ToDoItem key={t.id} text={t.text} completed={t.completed} />;
     });
     return (
