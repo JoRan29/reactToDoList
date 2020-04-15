@@ -1,28 +1,24 @@
 import React from "react";
 import "./App.css";
-import ToDoItem from "./ToDoItem";
-// import Joke from "./Joke";
-// import jokesData from "./jokesData";
-// import Product from "./Product";
-// import productsData from "./productsData";
-import todoData from "./todoData";
+import TodoItem from "./TodoItem";
+import todosData from "./todosData";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todoData,
+      todos: todosData,
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(id) {
     this.setState((prevState) => {
-      const updatedTodos = prevState.todos.map((t) => {
-        if (t.id === id) {
-          t.completed = !t.completed;
+      const updatedTodos = prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
         }
-        return t;
+        return todo;
       });
       return {
         todos: updatedTodos,
@@ -31,29 +27,11 @@ class App extends React.Component {
   }
 
   render() {
-    // const jokeComponents = jokesData.map((j) => {
-    //   return <Joke key={j.id} question={j.question} punchline={j.punchline} />;
-    // });
-    // const productsComponents = productsData.map((p) => {
-    //   return <Product key={p.id} type={p.type} price={p.price} />;
-    // });
-    const todoComponent = this.state.todos.map((t) => {
-      return (
-        <ToDoItem
-          handleChange={this.handleChange}
-          key={t.id}
-          text={t.text}
-          completed={t.completed}
-        />
-      );
-    });
-    return (
-      <div className="todoList">
-        {todoComponent}
-        {/* {jokeComponents}
-        {productsComponents} */}
-      </div>
-    );
+    const todoItems = this.state.todos.map((item) => (
+      <TodoItem key={item.id} item={item} handleChange={this.handleChange} />
+    ));
+
+    return <div className="todoList">{todoItems}</div>;
   }
 }
 

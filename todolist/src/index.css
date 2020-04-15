@@ -36,7 +36,6 @@ code {
   border-bottom: 1px solid gray;
 }
 
-.products {
-  background-color: rgb(136, 91, 114);
-  padding: 40px;
+input {
+  margin-right: 10px;
 }
