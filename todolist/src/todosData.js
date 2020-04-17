@@ -1,28 +1,33 @@
 const todosData = [
   {
     id: 1,
-    text: "This is a placeholder 1 text!",
+    text: "Buy Groceris!",
     completed: true,
   },
   {
     id: 2,
-    text: "This is a placeholder 2 text!",
+    text: "Walk the dog!",
     completed: false,
   },
   {
     id: 3,
-    text: "This is a placeholder 3 text!",
+    text: "Learn React :)!",
     completed: true,
   },
   {
     id: 4,
-    text: "This is a placeholder 4 text!",
+    text: "Take out the trash!",
     completed: true,
   },
   {
     id: 5,
-    text: "This is a placeholder 5 text!",
+    text: "Water the plants!",
     completed: true,
+  },
+  {
+    id: 6,
+    text: "Clean the room!",
+    completed: false,
   },
 ];
 
